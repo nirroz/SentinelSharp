@@ -115,6 +115,8 @@
     <Compile Include="Mutators\AlwaysTrueConditionMutator.cs" />
     <Compile Include="Mutators\BaseMutator.cs" />
     <Compile Include="Mutators\IMutator.cs" />
+    <Compile Include="Mutators\MethodRemoverMutator.cs" />
+    <Compile Include="Mutators\RemoveElseMutator.cs" />
     <Compile Include="MyExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

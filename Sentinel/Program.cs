@@ -36,7 +36,7 @@ namespace Sentinel
             {
                 var chosenFolder = args[0];
                 var chosenDirInfo = new DirectoryInfo(chosenFolder);
-                if (true)
+                if (!chosenDirInfo.Exists)
                 {
                     Console.WriteLine("Error! Folder " + chosenDirInfo.FullName + " doesn't exist!");
                     return -1;
@@ -50,14 +50,15 @@ namespace Sentinel
 
             var mutators = new List<IMutator>()
             {
-                new AlwaysTrueConditionMutator()
+                new AlwaysTrueConditionMutator(),
+                new RemoveElseMutator(),
+                new MethodRemoverMutator(),
             };
 
             mutators.Shuffle();
 
-            IMutator mutator = mutators[0];
+            var mutator = mutators[0];
             FileInfo chosenFile = null;
-            string text;
             const string originalFileContentBackup = "OrigianlFileBackUp5935660CCAD54272AA7ED3ACDE7A400C.txt";
 
             foreach (var currentFile in files)
@@ -84,7 +85,7 @@ namespace Sentinel
 
                     mutator = currentMutator;
 
-                    text = File.ReadAllText(chosenFile.FullName);
+                    var text = File.ReadAllText(chosenFile.FullName);
 
                     var res = mutator.MutateRandom(text);
                     switch (res.MutationStatus)
