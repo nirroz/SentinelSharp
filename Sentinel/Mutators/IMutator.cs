@@ -2,7 +2,7 @@ using Microsoft.CodeAnalysis;
 
 namespace Sentinel.Mutators
 {
-    internal interface IMutator
+    public interface IMutator
     {
         int chosenIndex { get; }
         string MutationName { get; }
@@ -11,7 +11,7 @@ namespace Sentinel.Mutators
         IMutationResult MutateSpecific(string text, int index);
     }
 
-    internal interface IMutationResult
+    public interface IMutationResult
     {
         MutationStatus MutationStatus { get; }
         string NewText { get; }

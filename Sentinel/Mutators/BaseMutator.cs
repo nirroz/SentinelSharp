@@ -9,7 +9,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Sentinel.Mutators
 {
-    abstract class BaseMutator : CSharpSyntaxRewriter, IMutator
+    public abstract class BaseMutator : CSharpSyntaxRewriter, IMutator
     {
         private bool IsDetector;
 

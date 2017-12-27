@@ -9,7 +9,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Sentinel.Mutators
 {
-    class MethodRemoverMutator : BaseMutator
+    public class MethodRemoverMutator : BaseMutator
     {
         public override string MutationName => "MethodRemoverMutator";
 

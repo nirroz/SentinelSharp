@@ -3,3 +3,7 @@
 ################################################################################
 
 /Sentinel/bin/Debug
+/packages
+/packages
+/Sentinel/obj/Debug
+/Sentinel.Tests/bin/Debug

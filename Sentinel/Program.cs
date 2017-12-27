@@ -8,16 +8,17 @@ namespace Sentinel
 {
     class Program
     {
-        if(args.Length == 0)
-        {
-            Console.Out.WriteLine("Please specify files or directory.");
-            Console.Out.WriteLine("Usage is -files <File Name 1> <File Name 2> <File Name n> or");
-            Console.Out.WriteLine("directory name");
-            return -1;
-        }
-        
         static int Main(string[] args)
         {
+
+            if (args.Length == 0)
+            {
+                Console.Out.WriteLine("Please specify files or directory.");
+                Console.Out.WriteLine("Usage is -files <File Name 1> <File Name 2> <File Name n> or");
+                Console.Out.WriteLine("directory name");
+                return -1;
+            }
+
             FileInfo[] files;
             if (args[0] == "-files")
             {
